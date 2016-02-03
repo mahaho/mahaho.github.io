@@ -13,6 +13,11 @@ var gSelectedCircleHasMoved;
 var egNumCircle;
 var egCircle;
 
+var einGameTrian;
+
+var einGameCircle;
+
+var einGameSquare;
 
 
 
@@ -38,6 +43,11 @@ function einitBoard(){
         new Cell(eBoardHeight - 1, 0)];
     egNumCircle = egCircle.length;
     egSelectedCircleIndex=-1;
+    einGameTrian=-1;
+
+    einGameCircle=-1;
+
+    einGameSquare=-1;
     edrawBoard();
 
 }
@@ -71,16 +81,18 @@ function edrawBoard (){
   //  for (var i = 0; i < 1; i++) {
   //      edrawTrian(egCircle[i], i == egSelectedCircleIndex);
   //  }
+    if (einGameCircle==-1){
     for (var i = 0; i < 1; i++) {
         edrawCircle(egCircle[i], i == egSelectedCircleIndex);
-
-          }
+    }}
+    if (einGameSquare==-1){
     for (var i = 1; i < 2; i++) {
         edrawCub(egCircle[i], i == egSelectedCircleIndex);
-    }
+    }}
+    if (einGameTrian==-1){
     for (var i = 2; i < 3; i++) {
         edrawTrian(egCircle[i], i == egSelectedCircleIndex);
-    }
+    }}
 
 }
 
@@ -164,6 +176,11 @@ function elemOnClick(e) {
 }
 
 function eclickOnCircle(circleIndex) {
+    if (einGameCircle == circleIndex || einGameSquare==circleIndex || einGameTrian==circleIndex) {
+
+
+        return;
+    }
     if (egSelectedCircleIndex == circleIndex) {
 
         egSelectedCircleIndex=-1;
@@ -176,6 +193,7 @@ function eclickOnCircle(circleIndex) {
 }
 
 function egetCursorPosition(e) {
+    gclearSelected();
     /* возвращает в cell строку и колонку */
     var x;
     var y;
@@ -204,6 +222,18 @@ function checkSelectElem(){
 }
 
 function clearSelect(){
+    switch (checkSelectElem()){
+        case 0:
+            einGameCircle=0;
+            break
+        case 1:
+            einGameSquare=1;
+            break
+        case 2:
+            einGameTrian=2;
+            break
+    }
     egSelectedCircleIndex=-1;
+
     edrawBoard();
 }

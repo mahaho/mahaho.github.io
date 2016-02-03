@@ -193,6 +193,13 @@ function boardOnClick(e) {
     clickOnEmptyCell(cell);
 }
 
+function gclearSelected(){
+
+    gSelectedCircleIndex=-1;
+    drawBoard();
+    return;
+}
+
 function clickOnCircle(circleIndex,cell) {
     if (gSelectedCircleIndex == circleIndex) {
 
