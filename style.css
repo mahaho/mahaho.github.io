@@ -1,0 +1,50 @@
+body {
+    background: #f3f2f3;
+    color: #000000;
+    font-family: Trebuchet MS, Arial, Times New Roman;
+    font-size: 12px;
+}
+
+#container {
+    background: #FFFFFF;
+    margin: 30px auto;
+    width: 1000px;
+    height: 700px;
+}
+
+#header {
+    background: #838283;
+    height: 100px;
+    width: 1000px;
+}
+
+
+#content {
+    background: #d2d0d2;
+    float: right;
+
+    width: 1000px;
+    height: 500px;
+}
+
+#clear {
+    clear:both;
+}
+
+#footer {
+    background: #838283;
+    height: 100px;
+    width: 1000px;
+}
+
+#canvas_icon {
+    width: 150px;
+    height: 50px;
+}
+
+canvas {
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align:middle;
+}
