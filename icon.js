@@ -221,6 +221,12 @@ function checkSelectElem(){
       return egSelectedCircleIndex;
 }
 
+function eAllclearSelected(){
+
+    egSelectedCircleIndex=-1;
+    edrawBoard();
+    return;
+}
 function clearSelect(){
     switch (checkSelectElem()){
         case 0:

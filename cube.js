@@ -210,6 +210,7 @@ function clickOnCircle(circleIndex,cell) {
     gSelectedCircleIndex = circleIndex;
    // gSelectedCircleHasMoved = false;
     drawBoard(cell);
+    eAllclearSelected();
 }
 //вот тут намудрил..................................................................................,,,,,,,,,,,,,,,
 function clickOnEmptyCell(cell) {
@@ -257,6 +258,7 @@ function clickOnEmptyCell(cell) {
 }
 
 function getCursorPosition(e) {
+
     /* возвращает в cell строку и колонку */
     var x;
     var y;
